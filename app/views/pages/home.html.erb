@@ -1,0 +1,52 @@
+<section class="center">
+	 
+	 <h1>Don't Overpay for Car Repairs Again</h1>
+	  <p class="lead">Quotes for car maintenance & repairs from dealers and mechanics are really hard to understand. <br>Know exactly how much others are paying for similar car repairs in your area. </p>
+		<%= link_to "Add Your Repair", "#", :class => 'btn btn-primary btn-lg', :id => "showAddRepair" %>
+		<%= link_to "Browse Other Repairs", repairs_path, :class => 'btn btn-info btn-lg' %>
+
+</section>
+
+
+<section class="center add-repair">
+	<div class="row">
+	
+		<div id="addRepair"  style="display:none;"> 
+			<h3>1. Enter your vehicle info</h3>
+			<form class="form-inline" role="form">
+			  <div class="form-group">
+			    <label class="sr-only" for="exampleInputEmail2">Vehicle Year</label>
+			    <input type="text" class="form-control" placeholder="Vehicle Year">
+			  </div>
+			  <div class="form-group">
+			    <label class="sr-only" for="exampleInputPassword2">Make</label>
+			    <input type="text" class="form-control" placeholder="Make">
+			  </div>
+
+			  <div class="form-group">
+			    <label class="sr-only" for="exampleInputPassword2">Model</label>
+			    <input type="text" class="form-control" placeholder="Model">
+			  </div>
+
+			  <div class="form-group">
+			    <label class="sr-only" for="exampleInputPassword2">Zipcode</label>
+			    <input type="text" class="form-control" placeholder="Zipcode">
+			  </div>
+			  
+			  <button type="submit" class="btn btn-default">Continue</button>
+			</form>
+		</div>
+
+	</div>
+
+</section>
+
+
+<script type="text/javascript"> 
+   $(function() {
+       $('#showAddRepair').click(function() {
+           $('#addRepair').show();
+           return false;
+       });        
+   });
+</script>
