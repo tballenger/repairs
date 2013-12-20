@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131219055249) do
+ActiveRecord::Schema.define(version: 20131220003451) do
 
   create_table "repairs", force: true do |t|
     t.string   "description"
@@ -39,5 +39,14 @@ ActiveRecord::Schema.define(version: 20131219055249) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "vehicles", force: true do |t|
+    t.string   "vowner"
+    t.string   "vmake"
+    t.string   "vmodel"
+    t.string   "vyear"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
