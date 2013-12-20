@@ -12,7 +12,7 @@
 	<div class="row">
 	
 		<div id="addRepair"  style="display:none;"> 
-			<h3>1. Enter your vehicle info</h3>
+			<h3>Enter your vehicle info</h3>
 			<form class="form-inline" role="form">
 			  <div class="form-group">
 			    <label class="sr-only" for="exampleInputEmail2">Vehicle Year</label>
@@ -29,16 +29,64 @@
 			  </div>
 
 			  <div class="form-group">
-			    <label class="sr-only" for="exampleInputPassword2">Zipcode</label>
-			    <input type="text" class="form-control" placeholder="Zipcode">
+			    <label class="sr-only" for="exampleInputPassword2">Your Zipcode</label>
+			    <input type="text" class="form-control" placeholder="Your Zipcode">
 			  </div>
 			  
-			  <button type="submit" class="btn btn-default">Continue</button>
+			  <button id="showContinue" type="submit" class="btn btn-primary">Continue</button>
 			</form>
 		</div>
 
 	</div>
+</section>
 
+<section class="center add-repair">
+	<div class="row">
+	
+		<div id="addServices" style="display:none;"> 
+			<h3>Enter the repair info</h3>
+			<div id="p_scents">
+			<form class="form-inline" role="form">
+			  <div class="form-group">
+			    <label class="sr-only" for="exampleInputEmail2">Service</label>
+			    <input type="text" class="form-control" placeholder="Service">
+			  </div>
+			  <div class="form-group">
+			    <label class="sr-only" for="exampleInputPassword2">Service</label>
+			    <input type="text" class="form-control" placeholder="Service Cost">
+			  </div>
+
+			  <div class="btn-group">
+			    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+			      Done by <span class="caret"></span>
+			    </button>
+			    <ul class="dropdown-menu">
+			      <li><a href="#">Mechanic</a></li>
+			      <li><a href="#">Dealer</a></li>
+			      <li><a href="#">DIY</a></li>
+			    </ul>
+			  </div>
+
+			  <button id="addScnt" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+
+			  
+			      <p>
+			          <label for="p_scnts">
+
+			          </label>
+			      </p>
+			  </div>	
+
+			  
+			  
+
+			  <h3>Add repair</h3>
+				<button type="submit" class="btn btn-success btn-lg">Submit</button>			  
+
+			</form>
+		</div>
+
+	</div>
 </section>
 
 
@@ -49,4 +97,33 @@
            return false;
        });        
    });
+
+   $(function() {
+       $('#showContinue').click(function() {
+           $('#addRepair').hide();
+           $('#addServices').show();
+           return false;
+       });        
+   });
+
+  $(function() {
+          var scntDiv = $('#p_scents');
+          var i = $('#p_scents p').size() + 1;
+          
+          $('#addScnt').on('click', function() {
+                  $('<p><label for="p_scnts"><input type="text" id="p_scnt" size="20" name="p_scnt_' + i +'" value="" placeholder="Input Value" /><input type="text" id="p_scnt" size="20" name="p_scnt_' + i +'" value="" placeholder="Input Value" /><input type="text" id="p_scnt" size="20" name="p_scnt_' + i +'" value="" placeholder="Input Value" /></label> <a href="#" class="remScnt">Remove</a></p>').appendTo(scntDiv);
+                  i++;
+                  return false;
+          });
+          
+          $('#p_scents').on('click', '.remScnt', function() { 
+                  if( i > 2 ) {
+                          $(this).parents('p').remove();
+                          i--;
+                  }
+                  return false;
+          });
+  });
+
+
 </script>

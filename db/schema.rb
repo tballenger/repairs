@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131220003451) do
+ActiveRecord::Schema.define(version: 20131220043443) do
 
   create_table "repairs", force: true do |t|
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "total_cost"
+    t.integer  "total_repair_cost"
   end
 
   add_index "repairs", ["user_id"], name: "index_repairs_on_user_id"
