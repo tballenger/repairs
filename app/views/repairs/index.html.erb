@@ -1,31 +1,163 @@
-<h1>Listing repairs</h1>
+<div class="row">
+  <div class="col-md-4">
+    
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Zipcode: 90230</h4>
+      </div>
+      <div class="col-md-6">
+        <button class="btn btn-default pull-right">Change Zip</button>
+      </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>User Id</th>
-      <th>Cost</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+    </div>
 
-  <tbody>
-    <% @repairs.each do |repair| %>
-      <tr>
-        <td><%= repair.description %></td>
-        <td><%= repair.user.email %></td>
-        <td><%= repair.total_repair_cost %></td>
-        <td><%= link_to 'Show', repair %></td>
-        <td><%= link_to 'Edit', edit_repair_path(repair) %></td>
-        <td><%= link_to 'Destroy', repair, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <hr>
 
-<br>
+    <div class="row">    
+      <div class="col-md-12">
+        <h4>Filter By Vehicle</h4>
+      </div>
+      <div class="col-md-12">
+          <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Year <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+        <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Make <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+        </div>
+        <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Model <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+        </div>
+      </div>
+    </div>
 
-<%= link_to 'New Repair', new_repair_path %>
+    <hr>
+  
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Filter By Repair Type</h4>
+      </div>
+    </div>
+  
+
+  </div>
+
+  <div class="col-md-8">
+  <h4>Found 34 Repairs in your Area</h4>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-md-8 col-xs-8">
+              <h3 class="panel-title">Standard Coinsurance</h3>by LA Care
+            </div>
+            <div class="col-md-4 col-xs-4">
+              <span class="pull-right metal Bronze"><strong>Bronze</strong><br> </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-body">
+
+          <div class="row">
+            <!-- Premium and subsidy -->
+            <div class="col-md-4">
+              <p class="large-detail">Monthly Premium</p>
+
+              <h4 class="premium">$187.87</h4>
+              
+              <br>
+            </div>
+
+            <!-- Deductibles -->
+            <div class="col-md-4">
+              <p class="large-detail">Deductible</p>
+              <div class="unit-value">$5,000 <span class="per-unit">/ person</span></div>
+              <div class="unit-value">$10,000 <span class="per-unit">/ family</span></div>
+              <br>
+            </div>
+
+            <!-- OOP max -->
+            <div class="col-md-4">
+              <a href="#" title="What do these mean?" class="oop-help pull-right glyphicon glyphicon-question-sign"></a>
+              <p class="large-detail">Out of Pocket Max</p>
+              <div class="unit-value">$6,350 <span class="per-unit">/ person</span></div>
+              <div class="unit-value">$12,700 <span class="per-unit">/ family</span></div>
+              <br>
+            </div>
+          </div>
+        </div>
+
+          
+        
+
+
+      </div>
+    </div>
+  
+  </div>
+
+
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>User Id</th>
+          <th>Cost</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @repairs.each do |repair| %>
+          <tr>
+            <td><%= repair.description %></td>
+            <td><%= repair.user.email %></td>
+            <td><%= repair.total_repair_cost %></td>
+            <td><%= link_to 'Show', repair %></td>
+            <td><%= link_to 'Edit', edit_repair_path(repair) %></td>
+            <td><%= link_to 'Destroy', repair, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Repair', new_repair_path %>
+  </div>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+
+
+
+
+</div>
+</div>

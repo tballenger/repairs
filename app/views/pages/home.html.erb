@@ -1,9 +1,12 @@
-<section class="center">
+<section class="center" id='home-hero'>
 	 
 	 <h1>Don't Overpay for Car Repairs Again</h1>
 	  <p class="lead">Quotes for car maintenance & repairs from dealers and mechanics are really hard to understand. <br>Know exactly how much others are paying for similar car repairs in your area. </p>
-		<%= link_to "Add Your Repair", "#", :class => 'btn btn-primary btn-lg', :id => "showAddRepair" %>
-		<%= link_to "Browse Other Repairs", repairs_path, :class => 'btn btn-info btn-lg' %>
+		
+		
+		<%= link_to "Add Your Repair Info", "#", :class => 'btn btn-primary btn-lg', :id => "showAddRepair" %>
+		<%= link_to "Browse Repairs Around You", repairs_path, :class => 'btn btn-info btn-lg' %>
+		
 
 </section>
 
@@ -12,7 +15,7 @@
 	<div class="row">
 	
 		<div id="addRepair"  style="display:none;"> 
-			<h3>Enter your vehicle info</h3>
+			<h2>Enter your vehicle info</h2>
 			<form class="form-inline" role="form">
 			  <div class="form-group">
 			    <label class="sr-only" for="exampleInputEmail2">Vehicle Year</label>
@@ -27,11 +30,6 @@
 			    <label class="sr-only" for="exampleInputPassword2">Model</label>
 			    <input type="text" class="form-control" placeholder="Model">
 			  </div>
-
-			  <div class="form-group">
-			    <label class="sr-only" for="exampleInputPassword2">Your Zipcode</label>
-			    <input type="text" class="form-control" placeholder="Your Zipcode">
-			  </div>
 			  
 			  <button id="showContinue" type="submit" class="btn btn-primary">Continue</button>
 			</form>
@@ -44,7 +42,7 @@
 	<div class="row">
 	
 		<div id="addServices" style="display:none;"> 
-			<h3>Enter the repair info</h3>
+			<h2>Enter the repair info</h2>
 			<div id="p_scents">
 			<form class="form-inline" role="form">
 			  <div class="form-group">
@@ -67,7 +65,7 @@
 			    </ul>
 			  </div>
 
-			  <button id="addScnt" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+			  <button id="addScnt" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Add More</button>
 
 			  
 			      <p>
@@ -78,10 +76,7 @@
 			  </div>	
 
 			  
-			  
-
-			  <h3>Add repair</h3>
-				<button type="submit" class="btn btn-success btn-lg">Submit</button>			  
+				<button type="submit" class="btn btn-primary">Continue</button>			  
 
 			</form>
 		</div>
@@ -93,6 +88,7 @@
 <script type="text/javascript"> 
    $(function() {
        $('#showAddRepair').click(function() {
+           $('#home-hero').hide();
            $('#addRepair').show();
            return false;
        });        
